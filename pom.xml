@@ -1,16 +1,22 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	
+
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.rafawhitee</groupId>
 	<artifactId>common-utils</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<packaging>jar</packaging>
+
 	<name>common-utils</name>
+	<url>http>//maven.apache.org</url>
 
 	<properties>
 		<java.version>17</java.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
 		<commons-lang3.version>3.17.0</commons-lang3.version>
 		<commons-collections4.version>4.5.0-M2</commons-collections4.version>
 		<model-mapper.version>3.2.1</model-mapper.version>
@@ -21,11 +27,11 @@
 	<distributionManagement>
 		<repository>
 			<id>github</id>
-			<name>GitHub OWNER Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/rafawhitee/java-utils</url>
+			<name>GitHub rafawhitee Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/rafawhitee/common-utils</url>
 		</repository>
 	</distributionManagement>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
@@ -50,13 +56,13 @@
 			<artifactId>jjwt-api</artifactId>
 			<version>${jjwt.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt-impl</artifactId>
 			<version>${jjwt.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt-jackson</artifactId>
@@ -70,5 +76,16 @@
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
+
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>3.1.3</version>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>

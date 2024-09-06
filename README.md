@@ -1,2 +1,1 @@
-# template-spring
-Template Spring 3 and Java 17
+# Projeto para servir de Package para as bibliotecas privadas do Java
